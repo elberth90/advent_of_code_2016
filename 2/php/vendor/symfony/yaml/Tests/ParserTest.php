@@ -545,7 +545,7 @@ YAML;
         $expected->map = new \stdClass();
         $expected->map->{1} = 'one';
         $expected->map->{2} = 'two';
-        $tests['numeric-keys'] = array($yaml, $expected);
+        $tests['numeric-keypad'] = array($yaml, $expected);
 
         $yaml = <<<'YAML'
 map:
@@ -556,7 +556,7 @@ YAML;
         $expected->map = new \stdClass();
         $expected->map->{0} = 'one';
         $expected->map->{1} = 'two';
-        $tests['zero-indexed-numeric-keys'] = array($yaml, $expected);
+        $tests['zero-indexed-numeric-keypad'] = array($yaml, $expected);
 
         return $tests;
     }
@@ -762,7 +762,7 @@ EOF
     }
 
     /**
-     * > It is an error for two equal keys to appear in the same mapping node.
+     * > It is an error for two equal keypad to appear in the same mapping node.
      * > In such a case the YAML processor may continue, ignoring the second
      * > `key: value` pair and issuing an appropriate warning. This strategy
      * > preserves a consistent information model for one-pass and random access
@@ -810,7 +810,7 @@ EOD;
     /**
      * @group legacy
      * @dataProvider getParseExceptionOnDuplicateData
-     * @expectedDeprecation Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keys in YAML is deprecated %s.
+     * @expectedDeprecation Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keypad in YAML is deprecated %s.
      * throws \Symfony\Component\Yaml\Exception\ParseException in 4.0
      */
     public function testParseExceptionOnDuplicate($input, $duplicateKey, $lineNumber)

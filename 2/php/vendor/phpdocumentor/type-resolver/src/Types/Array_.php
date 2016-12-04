@@ -52,7 +52,7 @@ final class Array_ implements Type
     }
 
     /**
-     * Returns the type for the keys of this array.
+     * Returns the type for the keypad of this array.
      *
      * @return Type
      */
@@ -62,7 +62,7 @@ final class Array_ implements Type
     }
 
     /**
-     * Returns the value for the keys of this array.
+     * Returns the value for the keypad of this array.
      *
      * @return Type
      */

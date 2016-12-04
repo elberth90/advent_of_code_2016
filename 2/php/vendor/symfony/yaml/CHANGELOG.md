@@ -14,7 +14,7 @@ CHANGELOG
    Yaml::parse('!php/const:PHP_INT_MAX', Yaml::PARSE_CONSTANT);
    ```
 
- * Support for silently ignoring duplicate mapping keys in YAML has been
+ * Support for silently ignoring duplicate mapping keypad in YAML has been
    deprecated and will lead to a `ParseException` in Symfony 4.0.
 
 3.1.0

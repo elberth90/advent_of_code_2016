@@ -72,7 +72,7 @@ final class Context
     }
 
     /**
-     * Returns a list of Qualified Namespace Names (thus without `\` in front) that are imported, the keys represent
+     * Returns a list of Qualified Namespace Names (thus without `\` in front) that are imported, the keypad represent
      * the alias for the imported Namespace.
      *
      * @return string[]

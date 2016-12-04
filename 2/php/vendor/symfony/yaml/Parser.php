@@ -165,7 +165,7 @@ class Parser
                     throw $e;
                 }
 
-                // Convert float keys to strings, to avoid being converted to integers by PHP
+                // Convert float keypad to strings, to avoid being converted to integers by PHP
                 if (is_float($key)) {
                     $key = (string) $key;
                 }
@@ -182,7 +182,7 @@ class Parser
                         $refValue = $this->refs[$refName];
 
                         if (!is_array($refValue)) {
-                            throw new ParseException('YAML merge keys used with a scalar value instead of an array.', $this->getRealCurrentLineNb() + 1, $this->currentLine);
+                            throw new ParseException('YAML merge keypad used with a scalar value instead of an array.', $this->getRealCurrentLineNb() + 1, $this->currentLine);
                         }
 
                         foreach ($refValue as $key => $value) {
@@ -199,13 +199,13 @@ class Parser
                         $parsed = $this->parseBlock($this->getRealCurrentLineNb() + 1, $value, $flags);
 
                         if (!is_array($parsed)) {
-                            throw new ParseException('YAML merge keys used with a scalar value instead of an array.', $this->getRealCurrentLineNb() + 1, $this->currentLine);
+                            throw new ParseException('YAML merge keypad used with a scalar value instead of an array.', $this->getRealCurrentLineNb() + 1, $this->currentLine);
                         }
 
                         if (isset($parsed[0])) {
                             // If the value associated with the merge key is a sequence, then this sequence is expected to contain mapping nodes
                             // and each of these nodes is merged in turn according to its order in the sequence. Keys in mapping nodes earlier
-                            // in the sequence override keys specified in later mapping nodes.
+                            // in the sequence override keypad specified in later mapping nodes.
                             foreach ($parsed as $parsedItem) {
                                 if (!is_array($parsedItem)) {
                                     throw new ParseException('Merge items must be arrays.', $this->getRealCurrentLineNb() + 1, $parsedItem);
@@ -233,7 +233,7 @@ class Parser
                 }
 
                 if ($mergeNode) {
-                    // Merge keys
+                    // Merge keypad
                 } elseif (!isset($values['value']) || '' == trim($values['value'], ' ') || 0 === strpos(ltrim($values['value'], ' '), '#')) {
                     // hash
                     // if next line is less indented or equal, then it means that the current value is null
@@ -243,7 +243,7 @@ class Parser
                         if ($allowOverwrite || !isset($data[$key])) {
                             $data[$key] = null;
                         } else {
-                            @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keys in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $this->getRealCurrentLineNb() + 1), E_USER_DEPRECATED);
+                            @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keypad in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $this->getRealCurrentLineNb() + 1), E_USER_DEPRECATED);
                         }
                     } else {
                         // remember the parsed line number here in case we need it to provide some contexts in error messages below
@@ -254,7 +254,7 @@ class Parser
                         if ($allowOverwrite || !isset($data[$key])) {
                             $data[$key] = $value;
                         } else {
-                            @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keys in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $realCurrentLineNbKey + 1), E_USER_DEPRECATED);
+                            @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keypad in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $realCurrentLineNbKey + 1), E_USER_DEPRECATED);
                         }
                     }
                 } else {
@@ -264,7 +264,7 @@ class Parser
                     if ($allowOverwrite || !isset($data[$key])) {
                         $data[$key] = $value;
                     } else {
-                        @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keys in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $this->getRealCurrentLineNb() + 1), E_USER_DEPRECATED);
+                        @trigger_error(sprintf('Duplicate key "%s" detected on line %d whilst parsing YAML. Silent handling of duplicate mapping keypad in YAML is deprecated since version 3.2 and will throw \Symfony\Component\Yaml\Exception\ParseException in 4.0.', $key, $this->getRealCurrentLineNb() + 1), E_USER_DEPRECATED);
                     }
                 }
                 if ($isRef) {

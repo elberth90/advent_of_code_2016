@@ -1707,7 +1707,7 @@ ruby: |
 documents: 2
 
 ---
-test: Special keys
+test: Special keypad
 todo: true
 yaml: |
    "!": These three keys

@@ -58,7 +58,7 @@ class ExportUtil
         $array = array();
 
         foreach ((array) $value as $key => $val) {
-            // properties are transformed to keys in the following way:
+            // properties are transformed to keypad in the following way:
             // private   $property => "\0Classname\0property"
             // protected $property => "\0*\0property"
             // public    $property => "property"
